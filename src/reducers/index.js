@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import {REQUEST_MENU, SUCCESS_MENU, REQUEST_CONTENT, SUCCESS_CONTENT} from '../actions'
+import {REQUEST_MENU, SUCCESS_MENU, REQUEST_CONTENT, SUCCESS_CONTENT, REQUEST_CRYTPTO, RECIVED_CRYPTO} from '../actions'
 
 const selectedMenu = (state = 'all', action) => {
   switch (action.type) {
@@ -58,9 +58,36 @@ const content = (state = {
   }
 }
 
+//////////
+const cryptoList = (state = {
+  isFetching: false,
+  hasData: false,
+  selected: undefined,
+  lists: []
+}, action) => {
+  switch (action.type) {
+    case REQUEST_CRYTPTO:
+      return {
+        ...state,
+        isFetching: true,
+      }
+    case RECIVED_CRYPTO:
+      return {
+        ...state,
+        isFetching: false,
+        hasData: true,
+        lists: action.crypto
+      }
+    default:
+      return state
+  }
+}
+
+
 const rootReducer = combineReducers({
   list,
-  content
+  content,
+  cryptoList
 })
 
 

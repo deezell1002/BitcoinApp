@@ -4,6 +4,7 @@ import SettingForm from './setting'
 import TableTrade from './table/trade'
 import TableOrder from './table/order'
 import ViewChart from './chart/line'
+import Select from './form/select'
 
 
 export {
@@ -12,5 +13,6 @@ export {
   SettingForm,
   TableTrade,
   TableOrder,
-  ViewChart
+  ViewChart,
+  Select
 }

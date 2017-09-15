@@ -73,12 +73,12 @@ export default class App extends Component {
       <Router >
         <Stack key="root">
           <Scene 
-            initial
+            
             key="home" 
             component={Home}
             hideNavBar={true}
             ></Scene>
-          <Scene key="setting" component={Setting} hideNavBar={true}></Scene>
+          <Scene initial key="setting" component={Setting} hideNavBar={true}></Scene>
           <Scene key="calculate" component={Calculate} hideNavBar={true}></Scene>
           <Scene key="detail" component={Detail} hideNavBar={true}></Scene>
         </Stack>
